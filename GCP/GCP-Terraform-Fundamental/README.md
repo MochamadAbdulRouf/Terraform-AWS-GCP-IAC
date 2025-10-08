@@ -555,7 +555,7 @@ google_compute_instance.vm_instance: Modifications complete after 28s [id=projec
 Apply complete! Resources: 1 added, 1 changed, 0 destroyed.
 ```
 
-## Menambah Bucket ke file (basic-gcp-terraform)
+## Menambahkan Cloud Storage Resource ke dalam file dan Memperbaruinya menggunakan Terraform
 
 - Membuat simulasi rencana pembuatan Cloud Storage Bucket
 ```bash
