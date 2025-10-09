@@ -4,7 +4,7 @@ Module adalah sebuah wadah untuk sekumpulan resource Terraform yang digunakan be
 ## ROOT MODULE vs CHILD MODULE
 Root Module adalah sebutan untuk Module apapun yang memanggil Child Module, Ini seperti direktori utama yang melakukan "Terraform init" jadi Root Module adalah tempat mengeksekusi dan menerapkan resource dari Child Module.
 
-Child Module adalah Module yang akan di panggil dari Module lain menggunakan blok "module "..." { }. " , Tujuan Child Module adalah untuk menjadi komponen yang bisa di gunakan kembali (reusable). Child Module tidak bisa di jalankan langsung dia harus di panggil melalui Root Module.
+Child Module adalah Module yang akan di panggil dari Module lain menggunakan blok, Tujuan Child Module adalah untuk menjadi komponen yang bisa di gunakan kembali (reusable). Child Module tidak bisa di jalankan langsung dia harus di panggil melalui Root Module.
 
 ## Menggunakan Module Public || Folder = (terraform-google-network)
 
