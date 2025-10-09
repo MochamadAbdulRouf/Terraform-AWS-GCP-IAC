@@ -1,6 +1,11 @@
 # Terraform Modules GCP (Google Cloud Platform)
 Module adalah sebuah wadah untuk sekumpulan resource Terraform yang digunakan bersama-sama. Tujuannya adalah untuk mengemas konfigurasi menjadi komponen yang bisa digunakan kembali (reusable). Jadi analoginya seperti ini dari pada membangun server dari Nol, Bisa menggunakan Module yang berisi semua konfigurasi yang diperlukan.Jadi hanya dengan memanggil Module, server bisa di bangun kapanpun saat dibutuhkan.
- 
+
+## ROOT MODULE vs CHILD MODULE
+Root Module adalah sebutan untuk Module apapun yang memanggil Child Module, Ini seperti direktori utama yang melakukan "Terraform init" jadi Root Module adalah tempat mengeksekusi dan menerapkan resource dari Child Module.
+
+Child Module adalah Module yang akan di panggil dari Module lain menggunakan blok "module "..." { }. " , Tujuan Child Module adalah untuk menjadi komponen yang bisa di gunakan kembali (reusable). Child Module tidak bisa di jalankan langsung dia harus di panggil melalui Root Module.
+
 ## Menggunakan Module Public || Folder = (terraform-google-network)
 
 1. Clone Repo GCP Terraform dari Google
