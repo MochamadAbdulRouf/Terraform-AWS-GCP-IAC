@@ -4,7 +4,7 @@
 resource "google_compute_instance" "instance_1" {
   # --- WAJIB DIPERIKSA DI CONSOLE ---
   name         = "tf-instance-1"
-  machine_type = "e2-micro" # GANTI INI dengan Tipe Mesin dari Console
+  machine_type = "e2-standard-2" # GANTI INI dengan Tipe Mesin dari Console
   zone         = var.zone      # Menggunakan variabel zone dari modul
 
   boot_disk {
@@ -16,7 +16,8 @@ resource "google_compute_instance" "instance_1" {
 
   # Konfigurasi minimal sesuai instruksi lab
   network_interface {
-    network = "default" # Asumsi menggunakan jaringan 'default'
+    network    = "tf-vpc-404749" # Nama VPC baru
+    subnetwork = "subnet-01"
   }
 
   metadata_startup_script = <<-EOT
@@ -30,7 +31,7 @@ resource "google_compute_instance" "instance_1" {
 resource "google_compute_instance" "instance_2" {
   # --- WAJIB DIPERIKSA DI CONSOLE ---
   name         = "tf-instance-2"
-  machine_type = "e2-micro" # GANTI INI dengan Tipe Mesin dari Console
+  machine_type = "e2-standard-2" # GANTI INI dengan Tipe Mesin dari Console
   zone         = var.zone      # Menggunakan variabel zone dari modul
 
   boot_disk {
@@ -42,7 +43,8 @@ resource "google_compute_instance" "instance_2" {
 
   # Konfigurasi minimal sesuai instruksi lab
   network_interface {
-    network = "default" # Asumsi menggunakan jaringan 'default'
+    network    = "tf-vpc-404749" # Nama VPC baru
+    subnetwork = "subnet-02"
   }
 
   metadata_startup_script = <<-EOT
@@ -51,3 +53,4 @@ resource "google_compute_instance" "instance_2" {
   
   allow_stopping_for_update = true
 }
+
