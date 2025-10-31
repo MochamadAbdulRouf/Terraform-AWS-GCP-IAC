@@ -12,12 +12,10 @@ resource "google_compute_instance" "instance_1" {
       image = "debian-11-bullseye-v20251014" # GANTI INI dengan 'Boot disk image' dari Console
     }
   }
-  # --- AKHIR BAGIAN WAJIB DIPERIKSA ---
 
-  # Konfigurasi minimal sesuai instruksi lab
   network_interface {
-    network    = "tf-vpc-404749" # Nama VPC baru
-    subnetwork = "subnet-01"
+    network    = "tf-vpc-404749" # Nama VPC 
+    subnetwork = "subnet-01" # Nama Subnet
   }
 
   metadata_startup_script = <<-EOT
@@ -31,19 +29,18 @@ resource "google_compute_instance" "instance_1" {
 resource "google_compute_instance" "instance_2" {
   # --- WAJIB DIPERIKSA DI CONSOLE ---
   name         = "tf-instance-2"
-  machine_type = "e2-standard-2" # GANTI INI dengan Tipe Mesin dari Console
-  zone         = var.zone      # Menggunakan variabel zone dari modul
+  machine_type = "e2-standard-2"
+  zone         = var.zone     
 
   boot_disk {
     initialize_params {
-      image = "debian-11-bullseye-v20251014" # GANTI INI dengan 'Boot disk image' dari Console
+      image = "debian-11-bullseye-v20251014" 
     }
   }
   # --- AKHIR BAGIAN WAJIB DIPERIKSA ---
 
-  # Konfigurasi minimal sesuai instruksi lab
   network_interface {
-    network    = "tf-vpc-404749" # Nama VPC baru
+    network    = "tf-vpc-404749" 
     subnetwork = "subnet-02"
   }
 
