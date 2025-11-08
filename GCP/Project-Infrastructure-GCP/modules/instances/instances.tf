@@ -1,5 +1,6 @@
 # File: ./modules/instances/instances.tf
-
+# Dibawah ini adalah resource untuk membuat terraform mengetahui bahwa sudah ada 2 VM dibuat 
+# Dan menautkannya menggunakan terraform import.
 # Resource untuk instance pertama
 resource "google_compute_instance" "instance_1" {
   # --- WAJIB DIPERIKSA DI CONSOLE ---
@@ -18,6 +19,7 @@ resource "google_compute_instance" "instance_1" {
     subnetwork = "subnet-01" # Nama Subnet
   }
 
+  # Mencegah pembaruan otomatis yang dapat menghentikan instance
   metadata_startup_script = <<-EOT
         #!/bin/bash
     EOT
