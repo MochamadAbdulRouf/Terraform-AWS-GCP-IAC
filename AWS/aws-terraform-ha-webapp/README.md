@@ -51,3 +51,11 @@ terraform plan
 ```bash
 terraform apply
 ```
+
+Project results documentation
+
+1. View the hostname
+![doc-project1](./image/tf-project1.png)
+
+2. Refresh the browser
+![doc-project2](./image/tf-project2.png)
